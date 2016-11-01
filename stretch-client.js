@@ -49,7 +49,10 @@ function repaintWord(canvas, ctx) {
       consumedLength += gaps[s];
 
       ctx.fillStyle = '#000';
-      ctx.fillRect(totalLength - consumedLength - 5, 94, gaps[s] + rLength + 5, 4);
+
+      var continuation = (s === gaps.length - 1) ? -5 : 16;
+
+      ctx.fillRect(totalLength - consumedLength + continuation, 94, gaps[s] + rLength - continuation, 4);
     }
   }
 }
