@@ -1,5 +1,6 @@
 var mainWord;
-var rLength = 20;
+var rLength = 17;
+var barLevel = 96;
 
 function clearCanvas(canvas, ctx) {
   ctx.fillStyle = '#fff';
@@ -44,15 +45,15 @@ function repaintWord(canvas, ctx) {
 
     if (s !== segments.length - 1) {
       ctx.fillStyle = '#fff';
-      ctx.fillRect(totalLength - consumedLength, 0, rLength, 150);
+      ctx.fillRect(totalLength - consumedLength - 3, 0, rLength + 3, 150);
 
       consumedLength += gaps[s];
 
       ctx.fillStyle = '#000';
 
-      var continuation = (s === gaps.length - 1) ? -5 : 16;
+      var continuation = -5;
 
-      ctx.fillRect(totalLength - consumedLength + continuation, 94, gaps[s] + rLength - continuation, 4);
+      ctx.fillRect(totalLength - consumedLength + continuation, barLevel, gaps[s] + rLength - continuation, 4);
     }
   }
 }
@@ -79,9 +80,9 @@ function startWord(canvas, word) {
   var ctx = canvas.getContext('2d');
   clearCanvas(canvas, ctx);
   ctx.fillStyle = '#000';
-  ctx.font = '45px sans-serif';
+  ctx.font = "45px 'Noto Naskh Arabic'";
   ctx.fillText(word, 0, 100);
-  
+
   $('#letters').empty();
 
   for (var w = 0; w < word.length; w++) {
