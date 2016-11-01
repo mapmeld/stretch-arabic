@@ -81,6 +81,8 @@ function startWord(canvas, word) {
   ctx.fillStyle = '#000';
   ctx.font = '45px sans-serif';
   ctx.fillText(word, 0, 100);
+  
+  $('#letters').empty();
 
   for (var w = 0; w < word.length; w++) {
     var letter = word[w];
