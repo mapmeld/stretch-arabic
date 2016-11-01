@@ -84,7 +84,7 @@ function startWord(canvas, word) {
   
   $('#letters').empty();
 
-  for (var w = 0; w < word.length; w++) {
+  for (var w = 0; w < word.length - 1; w++) {
     var letter = word[w];
     if (connectsOnLeft.indexOf(letter) > -1) {
       addStretchLetter(canvas, ctx, letter, w);
