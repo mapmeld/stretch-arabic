@@ -73,7 +73,7 @@ function addStretchLetter(canvas, ctx, letter, index) {
 }
 
 function startWord(canvas, word) {
-  var stretchable = ['ب', 'ج', 'غ', 'ظ', 'ض', 'خ', 'ث', 'ت', 'ش', 'ق', 'ص', 'ف', 'ع', 'س', 'ن', 'م', 'ل', 'ك', 'ي', 'ح', 'ه'];
+  var connectsOnLeft = ['ب', 'ج', 'غ', 'ظ', 'ض', 'خ', 'ث', 'ت', 'ش', 'ق', 'ص', 'ف', 'ع', 'س', 'ن', 'م', 'ل', 'ك', 'ي', 'ح', 'ه'];
   mainWord = word;
 
   var ctx = canvas.getContext('2d');
@@ -84,9 +84,9 @@ function startWord(canvas, word) {
   
   $('#letters').empty();
 
-  for (var w = 0; w < word.length; w++) {
+  for (var w = 0; w < word.length - 1; w++) {
     var letter = word[w];
-    if (stretchable.indexOf(letter) > -1) {
+    if (connectsOnLeft.indexOf(letter) > -1) {
       addStretchLetter(canvas, ctx, letter, w);
     }
   }
