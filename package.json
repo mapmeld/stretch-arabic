@@ -1,0 +1,25 @@
+{
+  "name": "stretch-arabic",
+  "version": "1.0.0",
+  "description": "make long Arabic words in canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapmeld/stretch-arabic.git"
+  },
+  "keywords": [
+    "arabic"
+  ],
+  "author": "Nick Doiron <ndoiron@mapmeld.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mapmeld/stretch-arabic/issues"
+  },
+  "homepage": "https://github.com/mapmeld/stretch-arabic#readme",
+  "dependencies": {
+    "canvas": "^1.6.2"
+  }
+}

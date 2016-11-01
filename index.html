@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Stretch Arabic</title>
+    <style>
+html, body {
+  font-family: sans-serif;
+}
+canvas, input, button {
+  display: block;
+}
+canvas {
+  border: 2px solid #000;
+}
+    </style>
+  </head>
+  <body>
+    <h4>Word</h4>
+    <input id="original" value="" placeholder="أستراليا"/>
+    <button id="reprint">Reprint</button>
+
+    <h4>Canvas</h4>
+    <canvas id="canvas" height="150" width="500"></canvas>
+
+    <h4>Stretchable Letters</h4>
+    <ul id="letters">
+    </ul>
+
+    <script src="./lib/jquery-3.1.1.min.js"></script>
+    <script src="./stretch-client.js"></script>
+  </body>
+</html>
