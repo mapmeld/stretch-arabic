@@ -22,6 +22,7 @@ function repaintWord(canvas, ctx) {
   }
   segments.push(mainWord.slice(lastLetter));
 
+  /*
   var lengths = [];
   var totalLength = 0;
   for (var s = 0; s < segments.length; s++) {
@@ -32,9 +33,26 @@ function repaintWord(canvas, ctx) {
   for (var g = 0; g < gaps.length; g++) {
     totalLength += gaps[g];
   }
+  */
 
   clearCanvas(canvas, ctx);
 
+  var gapmaker = 'ـ';
+
+  var outStr = '';
+  for (var s = 0; s < segments.length - 1; s++) {
+    outStr += segments[s];
+    var gapCount = Math.ceil(gaps[s] / 10);
+    for (var g = 0; g < gapCount; g++) {
+      outStr += gapmaker;
+    }
+  }
+  outStr += segments[segments.length - 1];
+  ctx.fillStyle = '#000';
+  ctx.fillText(outStr, 5, 100);
+  $('#output').text(outStr);
+
+/*
   var consumedLength = 0;
   for (var s = 0; s < segments.length; s++) {
     consumedLength += lengths[s];
@@ -56,6 +74,7 @@ function repaintWord(canvas, ctx) {
       ctx.fillRect(totalLength - consumedLength + continuation, barLevel, gaps[s] + rLength - continuation, 4);
     }
   }
+*/
 }
 
 function addStretchLetter(canvas, ctx, letter, index) {
