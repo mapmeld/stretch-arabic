@@ -1,5 +1,7 @@
 # stretch-arabic
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mapmeld/stretch-arabic.svg)](https://greenkeeper.io/)
+
 Arabic calligraphy JavaScript library (client-side and server-side)
 
 As an example, the Arabic name for Australia is commonly written
